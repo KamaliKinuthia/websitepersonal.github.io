@@ -6,152 +6,221 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-       body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #111; /* Dark background */
-    color: #e4e4e7; /* Light text */
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111; /* Dark background */
+            color: #e4e4e7; /* Light text */
+        }
 
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #1a1a1a;
-}
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #1a1a1a;
+        }
 
-header h1 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 10px;
-}
+        header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
 
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #c0c0c0;
-}
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #c0c0c0;
+        }
 
-header nav a {
-    color: #9ca3af;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px;
-    transition: color 0.3s;
-}
+        header nav a {
+            color: #9ca3af;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px;
+            transition: color 0.3s;
+        }
 
-header nav a:hover {
-    color: #fff;
-}
+        header nav a:hover {
+            color: #fff;
+        }
 
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #e4e4e7;
-}
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #e4e4e7;
+        }
 
-section p {
-    font-size: 1.1rem;
-    color: #9ca3af;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
+        section p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
 
-.card {
-    background-color: #1a1a1a;
-    border: 1px solid #2d2d2d;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s, border-color 0.3s;
-}
+        /* Slider for Featured Projects */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #3b82f6;
-}
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
 
-.card h3 {
-    color: #e4e4e7;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 20px;
+            min-width: 300px;
+            flex-shrink: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
 
-.card p {
-    color: #9ca3af;
-    margin-bottom: 15px;
-}
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
 
-.card a {
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .card h3 {
+            color: #e4e4e7;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-.card a:hover {
-    text-decoration: underline;
-}
+        .card p {
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
 
-.carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-}
+        .card a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.carousel::-webkit-scrollbar {
-    display: none;
-}
+        .card a:hover {
+            text-decoration: underline;
+        }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+        /* About Section with Side Image */
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-.video-card {
-    background-color: #1a1a1a;
-    border: 1px solid #2d2d2d;
-    border-radius: 8px;
-    padding: 10px;
-    transition: transform 0.3s, border-color 0.3s;
-    text-align: center;
-}
+        .about-content .text {
+            flex: 1;
+        }
 
-.video-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
+        .about-content .image {
+            flex: 1;
+            max-width: 400px;
+        }
 
-.video-card:hover {
-    transform: translateY(-5px);
-    border-color: #3b82f6;
-}
+        .about-content .image img {
+            width: 100%;
+            border-radius: 8px;
+        }
 
-.video-card h4 {
-    color: #e4e4e7;
-    font-size: 1.2rem;
-}
+        /* Skills Section with Small Cards */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-.video-card a {
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .skill-card {
+            background-color: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: #e4e4e7;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
 
-.video-card a:hover {
-    text-decoration: underline;
-}
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
 
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background-color: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 10px;
+            transition: transform 0.3s, border-color 0.3s;
+            text-align: center;
+        }
+
+        .video-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .video-card h4 {
+            color: #e4e4e7;
+            font-size: 1.2rem;
+        }
+
+        .video-card a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .video-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Media Icons */
+        #social-media .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #social-media .card ul li {
+            margin-bottom: 10px;
+        }
+
+        #social-media .card ul li a {
+            color: #e4e4e7;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        #social-media .card ul li a:hover {
+            color: #3b82f6;
+        }
 
     </style>
 </head>
@@ -168,59 +237,84 @@ section p {
     </header>
 
     <section id="summary">
-        <h2>About Muburi Njuguna</h2>
-        <p>Muburi Njuguna is a passionate mobile application developer with a solid background in software development and user experience design.</p>
+        <div class="about-content">
+            <div class="text">
+                <h2>About Muburi Njuguna</h2>
+                <p>Muburi Njuguna is a passionate mobile application developer with a solid background in software development and user experience design.</p>
+            </div>
+            <div class="image">
+                <img src="./back.jpg" alt="About Muburi Njuguna">
+            </div>
+        </div>
     </section>
 
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="carousel">
             <div class="card">
-                <h3>Driver Monitoring System</h3>
-                <p>Innovative application to monitor and improve driver safety.</p>
-                <a href="./AirNEt.docx" target="_blank">Read Documentation</a>
-            </div>
-	    <div class="card">
-                <h3>Driver Monitoring System</h3>
-                <p>Innovative application to monitor and improve driver safety.</p>
-                <a href="./documentation12.docx" target="_blank">Read Documentation</a>
-            </div>
-	   <div class="card">
-                <h3>Driver Monitoring System</h3>
-                <p>Innovative application to monitor and improve driver safety.</p>
-                <a href="./documentation12.docx" target="_blank">Read Documentation</a>
-            </div>
-	    <div class="card">
-                <h3>Driver Monitoring System</h3>
-                <p>Innovative application to monitor and improve driver safety.</p>
-                <a href="./documentation12.docx" target="_blank">Read Documentation</a>
+                <h3>Autobiography</h3>
+                <p>A detailed look into my life and career.</p>
+                <a href="./A journey of Growth and Exploration.docx" target="_blank">Read Documentation</a>
             </div>
             <div class="card">
                 <h3>My Autobiography</h3>
-                <p>A detailed look into my life and career.</p>
-                <a href="./autobiography3.pptx" target="_blank">View PPT</a>
+                <p>PPT slides</p>
+                <a href="./A-Journey-of-Growth-and-Exploration.pptx" target="_blank">View PPT</a>
             </div>
             <div class="card">
-                <h3>Innovation in Cloud Computing</h3>
+                <h3>Cv</h3>
+                <p>English Version</p>
+                <a href="./MuburiresumeEnglish.pdf" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>CV</h3>
+                <p>Swahili</p>
+                <a href="./sWA.pdf" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>CV</h3>
+                <p>KIKUYU</p>
+                <a href="./kIKU.pdf" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>PHOTOGRAPHIC ESSAY</h3>
+                <p>Illuminating the future of Africa</p>
+                <a href="./PHOTOGRAPHIC ESSAY.docx" target="_blank">View Slides</a>
+            </div>	
+	<div class="card">
+                <h3>Gender awareness</h3>
+                <p>Role of Gender awareness</p>
+                <a href="./Role of Gender awareness.pptx" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>Innovation in Tech</h3>
                 <p>Pioneering advancements in cloud-based solutions.</p>
-                <a href="./cloud computing4.pptx" target="_blank">View Slides</a>
+                <a href="./INNOVATION IN TECH.pptx" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>Innovation in Tech</h3>
+                <p>Word document</p>
+                <a href="./Innovation in Tech Cloud Computing.docx" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>Impact of African Culture on Information Technology</h3>
+                <p>word document</p>
+                <a href="./Impact of African Culture on Information Technology.docx" target="_blank">View Slides</a>
+            </div>
+	<div class="card">
+                <h3>Innovation in Tech</h3>
+                <p>Addressing the Challenges of Climate Change in Modern Society.docx</p>
+                <a href="./Addressing the Challenges of Climate Change in Modern Society.docx" target="_blank">View Slides</a>
             </div>
         </div>
     </section>
 
     <section id="skills">
         <h2>Skills</h2>
-        <div class="card">
-            <h3>Python</h3>
-            <p>Extensive experience in Python programming for various applications.</p>
-        </div>
-        <div class="card">
-            <h3>Android Development</h3>
-            <p>Developing responsive and user-friendly Android applications.</p>
-        </div>
-        <div class="card">
-            <h3>Java</h3>
-            <p>Strong background in Java for enterprise-level applications.</p>
+        <div class="skills-grid">
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Android Development</div>
+            <div class="skill-card">Java</div>
         </div>
     </section>
 
@@ -253,56 +347,8 @@ section p {
                 <li><a href="https://github.com/Muburii" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/brian-muburi-7788331bb" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 <li><a href="https://wa.me/+254746590559" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-                <li><a href="https://x.com/MuburiBrian" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-                <li><a href="https://www.instagram.com/muburii__/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
             </ul>
         </div>
     </section>
-
-
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Carousel functionality
-        const carousel = document.querySelector('.carousel');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        carousel.addEventListener('mousedown', (e) => {
-            isDown = true;
-            carousel.classList.add('active');
-            startX = e.pageX - carousel.offsetLeft;
-            scrollLeft = carousel.scrollLeft;
-        });
-
-        carousel.addEventListener('mouseleave', () => {
-            isDown = false;
-            carousel.classList.remove('active');
-        });
-
-        carousel.addEventListener('mouseup', () => {
-            isDown = false;
-            carousel.classList.remove('active');
-        });
-
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 3; // scroll-fast
-            carousel.scrollLeft = scrollLeft - walk;
-        });
-    </script>
 </body>
 </html>
-```
